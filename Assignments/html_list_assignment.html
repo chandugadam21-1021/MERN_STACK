@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Description list*/
+        dt{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: larger;
+        }
+        /*unordered and ordered list*/
+        .sectionContainer{
+            display: flex;
+            gap: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--Description Lists-->
+    <h1 align="center">Common Household Pets</h1>
+    <div class="descriptionSection">
+        <dl>
+            <dt>canis lupus familiaris</dt>
+            <dd>Domestic dog - a highly variable mammal closely related to the gary wolf. </dd>
+        </dl>
+        <dl>
+            <dt>Felis silvestris catus</dt>
+            <dd>Domestic cat - a small, predatory feline mammal.</dd>
+        </dl>
+        <dl>
+            <dt>Oryctalagus cuniculus domesticus</dt>
+            <dd>Domestic rabbit - a small plant-eating mammal with long ears, long hinf legs, and a short tail.</dd>
+        </dl>
+        <dl>
+            <dt>Cavia porcellus</dt>
+            <dd>Domestic guinea pig - a small stout-bodied short-eared tailless domesticated rodent of South American origin.</dd>
+        </dl>
+    </div>
+
+    <hr>
+
+    <!--unordered lists-->
+    <div class="sectionContainer">
+        <div class="section">
+            <h1>Unordered Lists</h1>
+            <div>
+                <h2>Dics</h2>
+                <ul>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+            
+
+            <div>
+                <h2>Square</h2>
+                <ul style="list-style-type:square;">
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>Circle</h2>
+                <ul style="list-style-type:circle;">
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>None -no Bullet</h2>
+                <ul style="list-style-type:none;">
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ul>
+            </div>
+        </div>
+
+        <!--ordered lists-->
+        
+        <div class="section">
+            <div>
+                <h1>Ordered Lists</h1>
+                <ol type="1">
+                    <h2>Decimal</h2>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+            </div>
+
+            <div>
+                <ol type="list-style-type:decimal-leading-zero;">
+                    <h2>Decimal with leading zeros</h2>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+            </div>
+
+            <div>
+                <ol type="a">
+                    <h2>Lowercase ascii letters</h2>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+            </div>
+
+            <div>
+                <ol type="i">
+                    <h2>Lowercase roman numeric</h2>
+                    <li>First item</li>
+                    <li>Second item</li>
+                    <li>Third item</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <p>Preceding Text</p>
+    <ol type="I">
+        <li>List item 1
+            <ol type="a">
+                <li>Nested item 1.1</li>
+                <li>Nested item 1.2</li>
+            </ol>
+        </li>
+        <li>List item 2
+            <ol type="1">
+                <li>Nested item 2.1</li>
+                <li>Nested item 2.2
+                    <ul style="list-style-type: circle;">
+                        <li>Nested item 2.2.1</li>
+                        <li>Nested item 2.2.2
+                            <ul style="list-style-type:square;">
+                                <li>Nested item 2.2.2.1</li>
+                                <li>Nested item 2.2.2.2</li>
+                            </ul>
+                        </li>
+                        <li>Nested item 2.2.3</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>List item 3
+            <ul style="list-style-type: disc;">
+                <li>Nested item 3.1</li>
+                <li>Nested item 3.2</li>
+                <li>Nested item 3.3</li>
+            </ul>
+        </li>
+    </ol>
+    
+</body>
+</html>
