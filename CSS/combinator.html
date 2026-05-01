@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=h">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: grey;
+        }
+        /*Descendant Selector*/
+        h3 span{
+            color: red;
+        }
+        /*Child Selector*/
+        h3 > p{
+            background-color: aqua;
+        }
+        /*Adjacent sibling selector*/
+        p + a{
+            color: green;
+        }
+        /* General sibling selector*/
+        /**h1 ~ span{
+            color:red;
+        }**/
+    </style>
+</head>
+<body>
+    <h1>Order list</h1>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <h1>Unorder list</h1>
+    <ul>
+        <li>
+            <span>
+                <p>This is a paragraph present in Unorder list.</p>
+            </span>
+        </li>
+        <li>unordered list items</li>
+        <li>unordered list items</li>
+        <li>unordered list items</li>
+    </ul>
+    <h1>header</h1>
+    <h3>
+        <p>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, eligendi quod temporibus ex repellendus recusandae aut laboriosam consequuntur natus, exercitationem sequi laborum expedita blanditiis voluptates est excepturi fugit culpa molestias.</span>
+        </p>
+        <a href="">hello</a>
+    </h3>
+</body>
+</html>

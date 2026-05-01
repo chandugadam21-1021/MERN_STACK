@@ -1,0 +1,52 @@
+notes
+
+CSS:
+    => css stands for cascading style sheet
+    => It is used to apply style to the web page.
+    => css are introduced in the year 1994 by the developer "honkon wiuemlie"
+    => The present version of css is css3
+
+METHODS TO APPLY STYLINGS TO WEB PAGE:
+    1. Inline css 
+        * Applying styling by taking "style" attribute in the html element.
+        * This styling is applicable for only that element.
+        * For inline css not required css selectors.
+    2. Internal css
+        * Applying stylings by taking <style></style> tag in head tag is called as an interanl css
+        * To apply iternal css we need css selectors
+    3. External css
+        * Apptying the style by taking link tag 
+        * Link the external file to the html file
+
+CSS SELECTORS
+    * CSS selectors are used to html element to apply
+    * CSS selectors are present in internal & External css
+
+    types of selectors
+        => simple selector
+            => class selector
+            => id selector
+            => tag selector
+            => grouping selector
+            => universal selector
+
+        => combinator selectors
+            These define the relationships between elements.
+            => Descendant selector(space)
+                * Inside another element (nested elements)
+                * we can select any element inside the parent element.
+            => child selector(>)
+                * Direct child element
+                * we can't select any element inside the parent element. we can only select the child element 
+            =>Adjacent sibling(+) -> next sibling
+            => general sibling(~)
+
+        => attribute selector
+            example:
+                input[ type="text"]{
+                    broder:1px solid black;
+                }
+
+        => pseudo-class selector -> Target elements in a specific state(:hover,:active)
+        => pseudo-element selector -> style specific parts of elements(::before, ::after)
+        => sturctural selector -> more advanced targeting based on position or structure
