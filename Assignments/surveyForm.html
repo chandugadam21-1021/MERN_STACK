@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body{
+            margin:0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        fieldset{
+            border-radius: 10px;
+            width: fit-content;
+            margin-top:25% ;
+            background-color: lightgrey;
+            border: none;
+        }
+        h2{
+            padding-bottom: 30px;
+        }
+        input{
+            width:97.5%;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            padding-left: 10px;
+
+        }
+        .rating{
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .subscribeContainer{
+            display: flex;
+            padding-right: 60%;
+            align-items: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            font-weight: bold;
+            font-size: large;
+            border-radius: 10px ;
+            background-color: blue;
+            border: none;
+            margin-left: 33.3%;
+            color: white;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <h2 align="center">Survey Form</h2>
+
+            <label for="userName">User Name</label>
+            <input type="text" id="userName" placeholder="User name"><br><br>
+            
+            
+            
+            <label for="feedback">Feedback</label>
+            <input type="textarea" id="feedback" placeholder="Feedback"><br><br>
+            
+            <label for="">Rating</label><br>
+            <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5"><br><br>
+                <label for="rating">5</label>
+                <input type="radio" id="star4" name="rating" value="4"><br><br>
+                <label for="rating">4</label>
+                <input type="radio" id="star3" name="rating" value="3"><br><br>
+                <label for="rating">3</label>
+                <input type="radio" id="star2" name="rating" value="2"><br><br>
+                <label for="rating">2</label>
+                <input type="radio" id="star1" name="rating" value="1"><br><br>
+                <label for="rating">1</label>
+            </div><br>
+            
+            <label for="tech">Favorite Technology</label>
+            <select name="Technologies" id="tech">
+                <option value="default">--choose Technology--</option>
+                <optgroup label="Frontend">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JS">JavaScript</option>
+                </optgroup>
+                <optgroup label="Backend">
+                    <option value="Node.js">Node.js</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </optgroup>
+
+                <optgroup label="Database">
+                    <option value="MongoDB">MongoDB</option>
+                    <option value="MySQL">MySQL</option>
+                </optgroup>
+            </select><br><br>
+
+            <div class="subscribeContainer">
+                <label for="subscribe">Subscribe</label>
+                <input type="checkbox" id="subscribe" class="subscribe">
+            </div>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
