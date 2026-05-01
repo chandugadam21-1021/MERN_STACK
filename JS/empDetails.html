@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body align="center">
+    <h1>Employee Details</h1>
+
+    <input type="search" id="input" placeholder="search">
+    <br><br> 
+    <!-- <button type="submit" id="subBtn">Submit</button><br><br> -->
+    <table border="1" cellspacing="0" cellpadding="5" align="center">
+        <thead bgcolor="lightgrey">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Department</th>
+                <th>adress</th></th>
+                <th>salary</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Chandu</td>
+            <td>25</td>
+            <td>IT</td>
+            <td>Vizag</td>
+            <td>50000</td>
+        </tr>
+        <tr>
+            <td>Jagadish</td>
+            <td>30</td>
+            <td>HR</td>
+            <td>Hyderabad</td>
+            <td>60000</td>
+        </tr>
+        <tr>
+            <td>Munna</td>
+            <td>28</td>
+            <td>Finance</td>
+            <td>Chennai</td>
+            <td>55000</td>
+        </tr>
+        </tbody>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut natus quidem necessitatibus, alias earum at reprehenderit voluptates. Velit sapiente perspiciatis saepe corporis doloremque excepturi voluptatum maxime repellendus quos, ullam molestias!</p>
+        <button onclick="disappearPara()">Click here</button>
+
+       
+        <script>
+            let rows = document.querySelectorAll("tbody tr");
+            let input = document.querySelector("input");
+
+            function disappearPara(){
+                let para = document.querySelector("p");
+                para.style.display = (para.style.diaplay == "block")? "none" : "block";
+            }
+            //input.onkeyup = ()=>{
+            //    console.log(input.value);
+            //}
+
+            input.addEventListener('keyup', ()=>{
+                let inputText = input.value.toLowerCase()
+                
+                rows.forEach((row)=>{
+                let rowData = row.textContent;
+                let result = rowData.toLowerCase().includes(inputText);
+
+                console.log(result);
+                row.style.display = result? "" : "none";
+            })
+            })
+        </script>
+</body>
+</html>

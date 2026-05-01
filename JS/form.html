@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <label for="">UserName</label>
+            <input type="text" id="username" placeholder="UserName"><br><br>
+            <label for="">password</label>
+            <input type="password" id="password"><br><br>
+            <button type="submit">Submit</button>
+            <button type="reset">cancel</button>
+        </fieldset>
+    </form>
+
+    
+    <script>
+        let username = document.getElementById('username');
+        let password = document.getElementById('password');
+        let form = document.querySelector('form')
+        form.addEventListener("submit",(e)=>{
+            e.preventDefault();
+            console.log("User Name: ", username.value);
+            console.log("password: ", password.value);
+            window.localStorage.setItem("User Name", username.value);
+            window.localStorage.setItem("Password", password.value);
+
+            let storedName = localStorage.getItem("User Name")
+            let storedPassword = localStorage.getItem("Password")
+            console.log("stored username: ", storedName);
+            console.log("Stored Password: ", storedPassword);
+        })
+    </script>
+</body>
+</html>

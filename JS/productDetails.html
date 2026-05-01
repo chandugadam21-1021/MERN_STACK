@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="pName" placeholder="Product name">
+    <input type="url" id="pUrl" placeholder="Product Url">
+    <input type="text" id="pPrice" placeholder="Price"><br><br>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product URL</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table><br><br>
+    <button type="submit" onclick="pushDetails()">Add</button>
+
+    <script>
+        let allProductDetails = []; 
+
+        let tbody = document.querySelectorAll("table");
+        
+        function pushDetails(){
+            let pName = document.getElementById("pName").value;
+            let pUrl = document.getElementById("pUrl").value;
+            let pPrice = document.getElementById("pPrice").value;
+
+            //pName = pName.value;
+            //pUrl = pUrl.value;
+            //pPrice = pPrice.value;
+
+            let productDetails={
+                Name: pName,
+                URL: pUrl,
+                Price: pPrice,
+            };
+            
+            allProductDetails.push(productDetails);
+            
+            allProductDetails.forEach(()=>{
+                let tr = document.createElement('tr');
+                let td1 = document.createElement('td');
+                let td2 = document.createElement('td');
+                let td3 = document.createElement('td');
+
+                tr.appendChild(td1);
+                tr.appendChild(td2);
+                tr.appendChild(td3);
+
+                td1.innerText = pName;
+                td2.innerHTML = `<img src="pUrl" width="50px" height="50px"/>`;
+                td3.innerText =  pPrice;
+                tbody.appendChild(tr);
+            })
+        }
+    </script>
+</body>
+</html>

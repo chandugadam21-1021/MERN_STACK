@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Anonymous function
+        let func =function(username,password){
+            console.log(username);
+            console.log(password)
+            console.log("Hello!");
+            return username +"  "+ password;
+        }
+        username = 'chandu.gadam21@gmail.com'
+        password = 'xyz123.'
+        console.log(func(username,password));
+
+        console.log("-----------------------------");
+        //normal function
+        function employeeDetails(name,salary,address){
+            console.log("Name: ", name);
+            console.log("Salary: ", salary);
+            console.log("Address: ", address);
+            let value= 100;
+            return name + value + salary + address;
+        }
+        let result = employeeDetails("chandu",7500,"xyz");
+        console.log(result);
+
+        console.log("-----------------------------");
+        //immediate invoking function/ self calling function
+        (function(){
+            let apiKey = 'AIzaSyCvEbTmH7qm6PRgxZ1LhXoEuWgtlLxhobk';
+            console.log(apiKey);
+        })();
+
+        console.log("-----------------------------");
+        // arrow function
+        let arrfun =() => console.log("This is an arrow function.");
+        arrfun();
+
+        let arrfunc =() =>{
+            console.log("This is an arrow function.");
+            console.log("This is a multiple lines of function.")
+        }    
+        arrfunc();
+
+        console.log("-----------------------------");
+        // Nested fuction
+        function outerfun(){
+            function innerfun(){
+                console.log("This is inner function");
+            }
+            console.log("This is outer function.");
+            innerfun();
+        }
+        outerfun();
+        
+        console.log("-----------------------------");
+        // returning inner function values to outer function and then to main
+        function outerfun(){
+            function innerfun(){
+                console.log("This is inner function");
+                let value = 100;
+                return value;
+            }
+            console.log("This is outer function.");
+            result = innerfun();
+            return result;
+        }
+        result = outerfun();
+        console.log(result);
+
+        console.log("-----------------------------");
+        //sample program
+        let outer=(count)=>{
+            let inner=(count) => {
+                return count++;
+            }
+            count =inner()
+            return count;
+        }
+        result1 = outer(count = 1);
+        console.log(result1);
+        console.log(result1);
+
+        console.log("-----------------------------");
+        //higher order function
+        let registerPage=()=>{
+            console.log("This is a registeration page.");
+        }
+        let loginPage=()=>{
+            console.log("This is a login page.");
+        }
+        let homePage=() =>{
+            console.log("This is a Home page.");
+        }
+        homePage(registerPage(), loginPage());
+
+        console.log("-----------------------------");
+        //callback functions
+        function display(fun1, fun2){
+            fun1();
+            fun2();
+        }
+        display(()=>{
+            console.log("This is first callback function.");
+        }, ()=>{
+            console.log("This is second callback function.");
+        })
+        console.log("-----------------------------");
+
+        //generator functions
+        function* generator(){
+            yield 10;
+            yield 20;
+            yield 50;
+            console.log("This is a generator function.")
+        }
+        console.log(generator().next());  // we need to use .next() to get output for generator functions
+        console.log(generator().next());
+
+
+        console.log("-----------------------------");
+        // generator function2
+        function* generator(){
+            yield 10;
+            yield 20;
+            yield 50;
+            console.log("This is a generator function.");
+        }
+        let a = generator();
+        console.log(a.next());  // we need to use .next() to get output for generator functions
+        console.log(a.next());
+        console.log(a.next());
+        console.log(a.next());
+
+        // generator functions using loops
+        // generator function2
+        //function* generator(){
+        //    yield 10;
+        //    yield 20;
+        //    yield 50;
+        //    console.log("This is a generator function.");
+        //}
+        //let a = generator();
+        //while a === true{
+        //    console.log(a.next().done); 
+        //}
+        
+    </script>
+</body>
+</html>

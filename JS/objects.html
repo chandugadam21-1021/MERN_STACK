@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name: "chandu",
+            roll_no: 553,
+            skills:[
+                "html","css","js"
+            ],
+            address:{
+                city: "vizag",
+                zipcode: 530048,
+            }
+
+        }
+        console.log(obj);
+        console.log(obj.address.city);
+
+        let obj1 = new Object({
+            username: "Chandu.Gadam",
+            password: "xyz",
+        })
+        console.log(obj1);
+        console.log(obj1.username);
+
+
+        console.log(Object.keys(obj));
+        console.log(Object.values(obj));
+        console.log(Object.entries(obj));
+
+        obj.name="munna";
+        console.log(obj); //update  //crud
+
+        obj.course = "Btech";
+        console.log(obj); // insert
+
+        delete obj.roll_no;
+        console.log(obj); //delete
+        
+
+    </script>
+</body>
+</html>
