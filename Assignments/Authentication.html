@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+            width: 100%;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top:12% ;
+        }
+        .hidden{
+            display: none;
+        }
+        fieldset{
+            background-color: rgb(160, 160, 160);
+            border-radius: 10px;
+            border: none;
+            width: 25%;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            border:none;
+            height: 20px;
+            border-radius: 5px;
+            padding-left: 10px;
+        }
+        button{
+            width: 100px;
+            height: 35px;
+            border-radius: 10px;
+            border:none;
+            color:white;
+            background-color: blue;
+            font-weight: bold;
+            font-size:medium;
+        }
+        .redirectBtn{
+            background-color: transparent;
+            font-size: 15px;
+            color: rgb(29, 29, 249);
+            margin:0;
+            padding-left:0;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <form action="" id="signIn">
+        <fieldset align="center">
+            <h2>Sign In</h2>
+            <div>
+                <label for="username_in">Username</label>
+                <input type="text" id="username_in" placeholder="Username" required><br><br>
+                <label for="password_in">Password</label>
+                <input type="password" id="password_in" required><br><br>
+            </div>
+            <p>Don't have an account?<button type="button" onclick="showSignUp()" class="redirectBtn">Sign Up</button></p>
+
+            <button type="submit">Sign In</button>
+        </fieldset>
+    </form>
+
+    <form action="" id="signUp" class="hidden">
+        <fieldset align="center">
+            <h2>Sign Up</h2>
+            <div>
+                <label for="username_up">Username</label>
+                <input type="text" id="username_up" placeholder="Username" required><br><br>
+                <label for="email_up">Email</label>
+                <input type="email" id="email_up" placeholder="email" required><br><br>
+                <label for="pswd_up">Password</label>
+                <input type="password" id="pswd_up" required><br><br>
+                <label for="phNum_up">Phone Number</label>
+                <input type="tel" max="10"  id="phNum_up" placeholder="+91" required><br><br>
+            </div>
+            <p>Already have an account?<button type="button" onclick="showSignIn()" class="redirectBtn">Sign In</button></p>
+
+            <button type="submit">Sign Up</button>
+        </fieldset>
+    </form>
+
+    <script>
+        let signUp = document.getElementById("signUp");
+        let signIn = document.getElementById("signIn");
+
+        // Sign In function
+        function sign_in(){
+
+            let username = document.getElementById("username_in").value;
+            let password = document.getElementById("password_in").value;
+
+            let users = JSON.parse(localStorage.getItem("usersDetails")) || [];
+
+            let userExist = users.find((u)=>{
+                return u.Username === username;
+            });
+
+            if(!userExist){
+                console.log("User doesn't exist!");
+                window.alert("Do you have an account?")
+            }
+            else if(userExist.Password !== password){
+                console.log("Incorrect Password!");
+            }
+            else{
+                console.log("Welcome to homepage!");
+            }
+        };
+
+        //sign up function
+        function sign_up(){
+
+            let userName = document.getElementById("username_up").value;
+            let email = document.getElementById("email_up").value;
+            let pswd = document.getElementById("pswd_up").value;
+            let Phone =document.getElementById("phNum_up").value;
+
+            let data = localStorage.getItem("usersDetails");
+
+            let users = data? JSON.parse(data) : [];
+
+            let userExist = users.find((u)=> {
+                return u.Username === userName;
+            });
+
+            if(userExist){
+                console.log("User already exists!");
+                return;
+            }
+
+            let newUser ={
+                Username: userName,
+                Password: pswd,
+                Email: email,
+                Phone: Phone,
+            };
+
+            users.push(newUser);
+
+            localStorage.setItem("usersDetails", JSON.stringify(users));
+
+            users.forEach((val)=>{
+                console.log(val);
+            });
+        };
+
+        // Event listener for signin form
+        signIn.addEventListener("submit", (e)=>{
+            e.preventDefault();
+
+            sign_in();
+            document.getElementById("signIn").reset();
+        });
+
+        // Event listener for signup form
+        signUp.addEventListener("submit", (e)=>{
+            e.preventDefault();
+
+            sign_up();
+            console.log("User registration sucessfully!");
+            document.getElementById("signUp").reset();
+        });
+
+        // toggle function
+        //show signin form
+        function showSignIn(){
+            signUp.classList.add("hidden");
+            signIn.classList.remove("hidden");
+        }
+        //show signup form
+        function showSignUp(){
+            signIn.classList.add("hidden");
+            signUp.classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
+
+
+<!-- NOTE
+    1. registeration form
+        fields:
+            username, email, password, ph number.
+
+        * check the username and email is exists in local storage.
+        * if the user exists in local storage the pop a message(alert), by saying that "you already had an acccount! just do login".
+        * or else push the info which is gathered from the feilds into local Storage.
+        * and then hide the registeration form and display the login form to continue...
+        
+    2. login form(default)
+        feilds:
+            username, password.
+        
+        * check the username and password is exists in local storage.
+        * if those exists then redirects to home page. The a home page must had an option for logout.
+        * or else pop a message, by saying "Do you have an account?" and shows an option to register. -->
+
+
+        <!-- function submitForm(e){
+            e.preventDefault();
+            let userName = document.getElementById("userName").value;
+            let email = document.getElementById("email").value;
+            let pswd = document.getElementById("pswd").value;
+            let phNum = document.getElementById("phNum").value;
+
+            let detailsConatainer = JSON.parse(localStorage.getItem("detailsContainer")) || [];
+
+            let userExist = detailsConatainer.some((user)=>{
+                return user.Email === email;
+            });
+
+            if(userExist){
+                alert("User already exists! Please Login.");
+                return login(userName, email);
+            }
+
+            let details = {
+                Username : userName,
+                Email : email,
+                Password : pswd,
+                Phone_Number : phNum,
+            }
+            detailsConatainer.push(details);
+
+            localStorage.setItem("detailsContainer", JSON.stringify(detailsConatainer));
+
+            console.log(detailsConatainer);
+            login(userName,email);
+        }
+        function login(userName, email){
+            let loginForm = document.getElementById("login");
+            login.style.display 
+        } -->
